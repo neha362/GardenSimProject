@@ -1,0 +1,4 @@
+(executable
+ (public_name GardenSimProject)
+ (name main)
+ (libraries GardenSimProject))

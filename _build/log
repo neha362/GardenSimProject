@@ -1,0 +1,6 @@
+# dune init project GardenSimProject
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /Users/nehasudarshan/.cache/dune/db
+# Workspace root: /Users/nehasudarshan/Documents/GitHub/GardenSimProject
+# Auto-detected concurrency: 10
