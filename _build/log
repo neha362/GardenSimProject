@@ -1,6 +1,23 @@
-# dune init project GardenSimProject
+# dune build
 # OCAMLPARAM: unset
 # Shared cache: enabled-except-user-rules
 # Shared cache location: /Users/nehasudarshan/.cache/dune/db
 # Workspace root: /Users/nehasudarshan/Documents/GitHub/GardenSimProject
 # Auto-detected concurrency: 10
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /Users/nehasudarshan/.opam/default/bin/ocamlc.opt -config > /var/folders/1k/f0jlf2gd7rj8gw__wp229pcr0000gn/T/dune_73cf79_output
+$ (cd _build/default && /Users/nehasudarshan/.opam/default/bin/ocamldep.opt -modules -impl lib/garden.ml) > _build/default/lib/.GardenSimProject.objs/gardenSimProject__Garden.impl.d
+$ (cd _build/default && /Users/nehasudarshan/.opam/default/bin/ocamlc.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -bin-annot -bin-annot-occurrences -I lib/.GardenSimProject.objs/byte -I /Users/nehasudarshan/.opam/default/lib/ocaml/str -intf-suffix .ml -no-alias-deps -opaque -open GardenSimProject -o lib/.GardenSimProject.objs/byte/gardenSimProject__Garden.cmo -c -impl lib/garden.ml)
+$ (cd _build/default && /Users/nehasudarshan/.opam/default/bin/ocamlc.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -a -o lib/GardenSimProject.cma lib/.GardenSimProject.objs/byte/gardenSimProject.cmo lib/.GardenSimProject.objs/byte/gardenSimProject__Object.cmo lib/.GardenSimProject.objs/byte/gardenSimProject__Garden.cmo)
+$ (cd _build/default && /Users/nehasudarshan/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -I lib/.GardenSimProject.objs/byte -I lib/.GardenSimProject.objs/native -I /Users/nehasudarshan/.opam/default/lib/ocaml/str -intf-suffix .ml -no-alias-deps -opaque -open GardenSimProject -o lib/.GardenSimProject.objs/native/gardenSimProject__Garden.cmx -c -impl lib/garden.ml)
+$ (cd _build/default && /Users/nehasudarshan/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -a -o lib/GardenSimProject.cmxa lib/.GardenSimProject.objs/native/gardenSimProject.cmx lib/.GardenSimProject.objs/native/gardenSimProject__Object.cmx lib/.GardenSimProject.objs/native/gardenSimProject__Garden.cmx)
+$ (cd _build/default && /Users/nehasudarshan/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -shared -linkall -I lib -o lib/GardenSimProject.cmxs lib/GardenSimProject.cmxa)
+$ (cd _build/default && /Users/nehasudarshan/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@31..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w +a-4-7-9-27-29-30-32..42-44-45-48-50-60-66..70 -g -o bin/main.exe /Users/nehasudarshan/.opam/default/lib/ocaml/str/str.cmxa lib/GardenSimProject.cmxa bin/.main.eobjs/native/dune__exe__Main.cmx)
