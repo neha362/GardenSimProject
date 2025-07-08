@@ -1,1 +1,0 @@
-lib/garden.mli: Object
