@@ -3,8 +3,8 @@ type s
 
 val empty : s
 
-val age : s -> s
-(**[age flower] increases a flower's age. If a flower originally has step count
+val step : s -> s
+(**[step flower] increases a flower's age. If a flower originally has step count
    [age], then the function acts on [flower] such that the flower's age after
    calling the function is [age + 1].*)
 
@@ -17,10 +17,14 @@ val getSpecies : s -> string option
    [getSpecies flower = species] if and only if the flower's species is
    [species].*)
 
-val getLocation : s -> (int * int) option
-(**[getLocation flower] returns the flower's location.
-   [getLocation flower = lod] if and only if the flower's location is loc.*)
-
 val getRepFilePath : s -> string option
 (**[getRepFilePath] returns the file path to the image representation of the
    flower, based on its species and age. *)
+
+val spawn : unit -> s
+(**[spawn ()] returns a seedling of a random flower species. The age of
+   [spawn ()] is always [0]*)
+
+val string_of_flower : s -> string
+(**[string_of_flower flower] returns a [string] representation of the flower,
+   with the flower's name and age.*)

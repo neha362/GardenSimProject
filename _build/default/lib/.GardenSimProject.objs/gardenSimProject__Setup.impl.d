@@ -1,1 +1,1 @@
-lib/setup.ml: BatEnum Csv
+lib/setup.ml: BatEnum Csv List Random
