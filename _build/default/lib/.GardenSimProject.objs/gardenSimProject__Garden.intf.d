@@ -1,1 +1,1 @@
-lib/garden.mli: Object
+lib/garden.mli: Flower
