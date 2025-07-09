@@ -11,7 +11,9 @@ let getAge = function
 
 let step = function
   | None -> None
-  | Some (name, age, file) -> Some (name, age + 1, file)
+  | Some (name, age, file) ->
+      if age = List.assoc name !species || Random.int 10 = 0 then None
+      else Some (name, age + 1, file)
 
 let getSpecies = function
   | None -> None

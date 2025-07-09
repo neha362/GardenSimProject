@@ -10,30 +10,24 @@ type s = Flower.s array array * int
    with age [age] will have the second tuple component be [age]. RI: the second
    tuple component must be nonnegative.*)
 
-let step gdn =
-  let garden = fst gdn in
-  Array.iteri
-    (fun i row ->
-      Array.iteri
-        (fun j col -> garden.(i).(j) <- Flower.step garden.(i).(j))
-        row)
-    garden;
-  (garden, snd gdn + 1)
-
 let getValueAt gdn x y =
   let garden = fst gdn in
   if x < 0 || y < 0 || (x - y) mod 2 <> 0 then Flower.empty else garden.(x).(y)
 
-let create width =
-  let garden = Array.make_matrix width (2 * width) Flower.empty in
-  for i = 0 to int_of_float (float_of_int width *. 1.5) do
-    let i = Random.int width in
-    let j = Random.int (2 * width) in
+let populate gdn count =
+  let garden = fst gdn in
+  for i = 0 to count do
+    let i = Random.int (Array.length garden) in
+    let j = Random.int (Array.length garden.(0)) in
     if (i - j) mod 2 = 0 && garden.(i).(j) = Flower.empty then
       garden.(i).(j) <- Flower.spawn ()
     else ()
-  done;
-  (garden, 0)
+  done
+
+let create width =
+  let garden = (Array.make_matrix width (2 * width) Flower.empty, 0) in
+  populate garden (int_of_float (float_of_int width *. 1.5));
+  garden
 
 let display_text garden =
   sprintf "Step: %d\n" (snd garden)
@@ -45,3 +39,14 @@ let display_text garden =
             str row
         ^ "\n")
       "" (fst garden)
+
+let step gdn =
+  let garden = fst gdn in
+  Array.iteri
+    (fun i row ->
+      Array.iteri
+        (fun j col -> garden.(i).(j) <- Flower.step garden.(i).(j))
+        row)
+    garden;
+  populate gdn (Array.length (fst gdn));
+  (garden, snd gdn + 1)
